@@ -34,12 +34,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.newTaskFragment
             )
         )
+        navController.navigate(R.id.onBoardFragment)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->  // исечазает боттом навигация при переходе на новый фрагмент
-            if (destination.id == R.id.newTaskFragment) {
+            if (destination.id == R.id.newTaskFragment||destination.id == R.id.onBoardFragment) {
                 navView.visibility = View.GONE
+                supportActionBar?.hide()
             } else navView.visibility = View.VISIBLE
         }
     }
