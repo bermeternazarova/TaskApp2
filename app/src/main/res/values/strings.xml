@@ -8,5 +8,17 @@
     <string name="next">Next</string>
     <string name="start">Start</string>
     <string name="skip">Skip</string>
+    <string name="name">Name</string>
+    <string name="data">Data</string>
     <string name="title">Title</string>
+    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="here">Here you can write down something important or make a schedule for tomorrow:)</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
+    <string name="sort">Sort</string>
+    <string name="sortbyalphabet">Sort by alphabet</string>
+    <string name="sortbytime">Sort by time</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
 </resources>

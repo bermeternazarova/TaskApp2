@@ -27,12 +27,9 @@ class OnBoardFragment : Fragment() {
         val adapter = AdapterBoard(childFragmentManager,this::onSkipClick,this ::onNextClick )
         binding.vpBoard.adapter=adapter
 
-        var viewPager = binding.vpBoard
-        viewPager.adapter=adapter
-        var indicator = binding.tabDots
-        indicator.setViewPager(viewPager)
-        indicator.createIndicators(3,0)
-        adapter.registerDataSetObserver(indicator.dataSetObserver)
+        binding.tabDots.setViewPager(binding.vpBoard)
+        binding.tabDots.createIndicators(3,0)
+        adapter.registerDataSetObserver(binding.tabDots.dataSetObserver)
     }
     private  fun onSkipClick(){
         binding.vpBoard.currentItem =2

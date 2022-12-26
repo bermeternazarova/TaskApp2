@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.taskapp2.R
 import com.example.taskapp2.databinding.FragmentOnBoardPageBinding
+import com.example.taskapp2.utils.Preference
 
 class OnBoardPageFragment(var listenerSkip:() -> Unit,
                           var  listenerNext:() -> Unit) : Fragment() {
@@ -31,6 +32,7 @@ class OnBoardPageFragment(var listenerSkip:() -> Unit,
     private fun initListeners() {
         binding.startBtn.setOnClickListener{
             findNavController().navigate(R.id.navigation_home)
+            Preference(requireContext()).setBoardingShowed(true)
         }
         binding.nextBtn.setOnClickListener {
             listenerNext.invoke()

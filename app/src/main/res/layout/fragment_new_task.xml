@@ -6,15 +6,25 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.new_task.NewTaskFragment">
+    <ImageView
+        android:id="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"
+        android:hint="@string/title"
         app:helperTextEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -26,7 +36,7 @@
         android:id="@+id/et_layout_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description"
+        android:hint="@string/description"
         android:layout_marginTop="8dp"
         app:helperTextEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -38,14 +48,30 @@
             android:id="@+id/description" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_layout_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/data"
+        android:layout_marginTop="8dp"
+        app:helperTextEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/et_layout_description"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_layout_description"
+        app:layout_constraintTop_toBottomOf="@id/et_layout_data"
         android:layout_marginTop="12dp"
         app:cornerRadius="10dp"
-        android:text="Save"
+        android:text="@string/save"
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textSize="20sp"

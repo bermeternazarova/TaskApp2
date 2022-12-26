@@ -24,9 +24,38 @@
         android:id="@+id/et_profile"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:hint="@string/app_name"
+        android:layout_marginTop="20dp"
+        android:hint="enter your name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/circle_image" />
+        app:layout_constraintTop_toBottomOf="@id/name_tv" />
+    <Button
+        android:id="@+id/btn_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/save"
+        app:layout_constraintTop_toBottomOf="@id/et_profile"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:id="@+id/name_tv"
+        android:hint="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle_image"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start|center"
+        android:layout_height="48dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_tv"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
