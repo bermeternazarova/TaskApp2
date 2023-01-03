@@ -18,17 +18,18 @@
         app:civ_border_width="3dp"
         app:civ_border_color="@color/middle_violet2"
         android:src="@drawable/account"
+        android:scaleType="centerCrop"
         />
 
     <EditText
         android:id="@+id/et_profile"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:hint="@string/enter_your_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_tv" />
+        app:layout_constraintTop_toBottomOf="@id/circle_image" />
     <Button
         android:id="@+id/btn_profile"
         android:layout_width="250dp"
@@ -41,24 +42,5 @@
         app:layout_constraintTop_toBottomOf="@id/et_profile"
         android:layout_marginTop="20dp"
         />
-    <TextView
-        android:id="@+id/name_tv"
-        android:hint="@string/name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/circle_image"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="start|center"
-        android:layout_height="48dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_tv"
-        />
+    <include layout="@layout/place_holder"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

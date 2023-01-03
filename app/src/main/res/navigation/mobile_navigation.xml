@@ -25,12 +25,12 @@
     <fragment
         android:id="@+id/newTaskFragment"
         android:name="com.example.taskapp2.ui.home.new_task.NewTaskFragment"
-        android:label="fragment_new_task"
+        android:label="@string/fragment_new_task"
         tools:layout="@layout/fragment_new_task" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.taskapp2.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/onBoardFragment"
@@ -45,6 +45,6 @@
     <fragment
         android:id="@+id/authenticationFragment"
         android:name="com.example.taskapp2.authentication.AuthenticationFragment"
-        android:label="fragment_authentication"
+        android:label="@string/authentication_fragment"
         tools:layout="@layout/fragment_authentication" />
 </navigation>

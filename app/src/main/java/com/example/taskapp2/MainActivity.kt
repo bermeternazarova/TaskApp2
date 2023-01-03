@@ -35,18 +35,20 @@ class MainActivity : AppCompatActivity() {
                 R.id.authenticationFragment
             )
         )
-        navController.navigate(R.id.authenticationFragment)
-//        if (Preference(applicationContext).isBoardingShowed())
-//            navController.navigate(R.id.navigation_home)
-//        else  navController.navigate(R.id.onBoardFragment)
+       // navController.navigate(R.id.authenticationFragment)
+        if (Preference(applicationContext).isBoardingShowed())
+            navController.navigate(R.id.navigation_home)
+        else  navController.navigate(R.id.onBoardFragment)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id ==R.id.newTaskFragment||destination.id ==R.id.onBoardFragment||destination.id==R.id.authenticationFragment) {
+            if (destination.id ==R.id.newTaskFragment) {
+                navView.visibility = View.GONE
+            }else if(destination.id ==R.id.onBoardFragment||destination.id==R.id.authenticationFragment){
                 navView.visibility = View.GONE
                 supportActionBar?.hide()
-            } else navView.visibility = View.VISIBLE
+        }else navView.visibility = View.VISIBLE
         }
     }
 }

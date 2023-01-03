@@ -27,4 +27,7 @@
     <string name="profile">Profile</string>
     <string name="send">send</string>
     <string name="your_phone_number">your phone number</string>
+    <string name="fragment_new_task">fragment_new_task</string>
+    <string name="fragment_profile">Profile</string>
+    <string name="authentication_fragment">Authentication</string>
 </resources>

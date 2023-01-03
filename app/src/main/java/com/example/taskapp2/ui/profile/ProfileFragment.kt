@@ -48,8 +48,9 @@ class ProfileFragment : Fragment() {
 
         binding.btnProfile.setOnClickListener {
             Preference(requireContext()).saveEditText(binding.etProfile.text.toString())
+           // Preference(requireContext()).getEditText()
         }
-        binding.nameTv.text = Preference(requireContext()).getEditText()
+        Preference(requireContext()).getEditText()
 
     }
 }
