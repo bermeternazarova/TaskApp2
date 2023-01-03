@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="middle_violet">#8D8DDE</color>
     <color name="middle_violet2">#7575F1</color>
+    <color name="end_color">#FF99CC</color>
+    <color name="start_color">#33CCFF</color>
+    <color name="end_color1">#AE88EA</color>
+    <color name="start_color1">#4776E6</color>
 </resources>

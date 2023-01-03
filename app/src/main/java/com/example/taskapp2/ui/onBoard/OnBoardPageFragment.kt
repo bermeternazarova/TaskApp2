@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import com.example.taskapp2.Keys
 import com.example.taskapp2.R
 import com.example.taskapp2.databinding.FragmentOnBoardPageBinding
 import com.example.taskapp2.utils.Preference
 
-class OnBoardPageFragment(var listenerSkip:() -> Unit,
-                          var  listenerNext:() -> Unit) : Fragment() {
+class OnBoardPageFragment(private var listenerSkip:() -> Unit,
+                          private var  listenerNext:() -> Unit) : Fragment() {
     private lateinit var binding: FragmentOnBoardPageBinding
 
     override fun onCreateView(
@@ -43,7 +44,7 @@ class OnBoardPageFragment(var listenerSkip:() -> Unit,
     }
     private fun initViews() {
         arguments.let {
-            val data = it?.getSerializable("onBoard") as BoardModel
+            val data = it?.getSerializable(Keys.ON_BOARD) as BoardModel
             binding.titleBoard.text=data.title
             binding.descriptionBoard.text=data.description
             data.image?.let { it1 -> binding.imageBoard.setImageResource(it1) }

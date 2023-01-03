@@ -21,4 +21,10 @@
     <string name="sortbytime">Sort by time</string>
     <string name="delete">Delete</string>
     <string name="search">Search</string>
+    <string name="update">Update</string>
+    <string name="add">add</string>
+    <string name="enter_your_name">enter your name</string>
+    <string name="profile">Profile</string>
+    <string name="send">send</string>
+    <string name="your_phone_number">your phone number</string>
 </resources>

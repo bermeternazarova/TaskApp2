@@ -7,15 +7,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingHorizontal="36dp"
     tools:context=".ui.onBoard.OnBoardPageFragment">
-    <ImageView
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/image_board"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/img1"
+        app:lottie_rawRes="@raw/working"
         app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         />
     <TextView
         android:id="@+id/title_board"

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import coil.load
 import com.example.taskapp2.databinding.FragmentProfileBinding
 import com.example.taskapp2.extencions.loadImage
 import com.example.taskapp2.utils.Preference
@@ -36,6 +35,11 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnProfile.alpha = 0f
+        binding.btnProfile.animate().apply {
+            duration = 2000
+            alpha(1f)
+        }
 
         binding.circleImage.setOnClickListener {
             getContent.launch("image/*")

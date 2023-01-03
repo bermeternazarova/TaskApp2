@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.taskapp2.R
 import com.example.taskapp2.databinding.FragmentOnBoardBinding
 
 class OnBoardFragment : Fragment() {

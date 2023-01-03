@@ -3,9 +3,8 @@ package com.example.taskapp2.utils
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import android.content.SharedPreferences.Editor
 
-class Preference (private  val  context: Context) {
+class Preference (context: Context) {
 
   private  val sharedPreferences:SharedPreferences = context.getSharedPreferences("preference", MODE_PRIVATE)
 

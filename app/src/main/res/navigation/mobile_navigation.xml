@@ -42,4 +42,9 @@
         android:name="com.example.taskapp2.ui.onBoard.OnBoardPageFragment"
         android:label="fragment_on_board_page"
         tools:layout="@layout/fragment_on_board_page" />
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.example.taskapp2.authentication.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication" />
 </navigation>
