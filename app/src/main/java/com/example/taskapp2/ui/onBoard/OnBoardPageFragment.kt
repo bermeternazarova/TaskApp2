@@ -11,16 +11,17 @@ import com.example.taskapp2.Keys
 import com.example.taskapp2.R
 import com.example.taskapp2.databinding.FragmentOnBoardPageBinding
 import com.example.taskapp2.utils.Preference
+import com.google.firebase.auth.FirebaseAuth
 
 class OnBoardPageFragment(private var listenerSkip:() -> Unit,
                           private var  listenerNext:() -> Unit) : Fragment() {
     private lateinit var binding: FragmentOnBoardPageBinding
+    private var auth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding= FragmentOnBoardPageBinding.inflate(LayoutInflater.from(context),container,false)
         return binding.root
     }
@@ -32,8 +33,11 @@ class OnBoardPageFragment(private var listenerSkip:() -> Unit,
 
     private fun initListeners() {
         binding.startBtn.setOnClickListener{
-            findNavController().navigate(R.id.navigation_home)
-            Preference(requireContext()).setBoardingShowed(true)
+            if (auth.currentUser !== null)
+                findNavController().navigateUp()
+           else {
+               findNavController().navigate(R.id.authenticationFragment)
+            Preference(requireContext()).setBoardingShowed(true)}
         }
         binding.nextBtn.setOnClickListener {
             listenerNext.invoke()

@@ -30,4 +30,10 @@
     <string name="fragment_new_task">fragment_new_task</string>
     <string name="fragment_profile">Profile</string>
     <string name="authentication_fragment">Authentication</string>
+    <string name="confirm">confirm</string>
+    <string name="enter_code">enter code</string>
+    <string name="phone_number">Phone number</string>
+    <string name="exit">Exit</string>
+    <string name="phone">phone</string>
+    <string name="information_about_user">Information about user</string>
 </resources>

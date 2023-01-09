@@ -13,7 +13,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/account"
+        android:background="@drawable/icon_nic"
+        />
+    <androidx.constraintlayout.widget.Placeholder
+        android:id="@+id/new_task_placeholder_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:content="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/icon_nic"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

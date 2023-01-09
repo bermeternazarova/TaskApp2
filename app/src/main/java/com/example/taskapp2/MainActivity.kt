@@ -1,6 +1,8 @@
 package com.example.taskapp2
 
+
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -10,15 +12,22 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.taskapp2.databinding.ActivityMainBinding
 import com.example.taskapp2.utils.Preference
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener{
+            Log.e("ololo", "onCreate: "+it.result )
+        }
 
         val navView: BottomNavigationView = binding.navView
 
@@ -35,20 +44,27 @@ class MainActivity : AppCompatActivity() {
                 R.id.authenticationFragment
             )
         )
-       // navController.navigate(R.id.authenticationFragment)
-        if (Preference(applicationContext).isBoardingShowed())
-            navController.navigate(R.id.navigation_home)
-        else  navController.navigate(R.id.onBoardFragment)
+        if (!Preference(applicationContext).isBoardingShowed()){
+            navController.navigate(R.id.onBoardFragment)
+        }else if (auth.currentUser == null){
+            navController.navigate(R.id.authenticationFragment)}
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id ==R.id.newTaskFragment) {
-                navView.visibility = View.GONE
-            }else if(destination.id ==R.id.onBoardFragment||destination.id==R.id.authenticationFragment){
-                navView.visibility = View.GONE
-                supportActionBar?.hide()
-        }else navView.visibility = View.VISIBLE
+            when (destination.id) {
+                R.id.newTaskFragment -> {
+                    navView.visibility = View.GONE
+                }
+                R.id.onBoardFragment, R.id.authenticationFragment -> {
+                    navView.visibility = View.GONE
+                    supportActionBar?.hide()
+                }
+                else -> {navView.visibility = View.VISIBLE
+                    supportActionBar?.show()
+                     }
+            }
         }
     }
 }

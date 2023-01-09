@@ -5,77 +5,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
     tools:context=".ui.home.new_task.NewTaskFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
         android:src="@mipmap/ic_launcher"
-        android:layout_width="250dp"
-        android:layout_height="250dp"/>
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/neon_green"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_title"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="@string/title"
+        android:background="@color/black"
         app:helperTextEnabled="true"
+        android:textColorHint="@color/neon_green"
+        app:hintTextColor="@color/neon_green"
+        app:boxStrokeColor="@color/neon_green"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/imageView"
         android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
             android:id="@+id/et_title" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_description"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="@string/description"
         android:layout_marginTop="8dp"
         app:helperTextEnabled="true"
+        android:textColorHint="@color/neon_green"
+        app:hintTextColor="@color/neon_green"
+        app:boxStrokeColor="@color/neon_green"
+        android:background="@color/black"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/et_layout_title"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
             android:id="@+id/et_description" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_data"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="@string/data"
+        app:boxStrokeColor="@color/neon_green"
         android:layout_marginTop="8dp"
+        android:textColorHint="@color/neon_green"
+        app:hintTextColor="@color/neon_green"
+        android:background="@color/black"
         app:helperTextEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/et_layout_description"
         app:layout_constraintStart_toStartOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_data"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_save"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/et_layout_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="12dp"
         app:cornerRadius="10dp"
         android:text="@string/save"
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:paddingVertical="12dp"/>
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/btn_gradient"
+        android:paddingVertical="20dp"/>
+
+    <include layout="@layout/place_holder"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,10 +77,11 @@ class HomeFragment :  Fragment() {
         val  task = taskAdapter.getTAsk(pos)
     findNavController().navigate(R.id.newTaskFragment, bundleOf(Keys.EDIT_TASK to task))
     }
+
     private fun onLongClick(pos:Int){
-        val option = arrayOf("Нет", "Удалить")
+        val option = arrayOf("No", "Delete")
         val alert = AlertDialog.Builder(requireContext())
-        alert.setTitle("Вы точно хотите удалить запись?").setItems(option,
+        alert.setTitle("Are you sure you want to delete the entry?").setItems(option,
             DialogInterface.OnClickListener { dialogInterface, i ->
             if (i==0){
                 dialogInterface.dismiss()

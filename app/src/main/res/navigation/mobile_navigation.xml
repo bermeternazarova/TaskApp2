@@ -44,7 +44,7 @@
         tools:layout="@layout/fragment_on_board_page" />
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.example.taskapp2.authentication.AuthenticationFragment"
+        android:name="com.example.taskapp2.ui.authentication.AuthenticationFragment"
         android:label="@string/authentication_fragment"
         tools:layout="@layout/fragment_authentication" />
 </navigation>

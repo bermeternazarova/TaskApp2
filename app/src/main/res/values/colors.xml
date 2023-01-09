@@ -13,4 +13,7 @@
     <color name="start_color">#33CCFF</color>
     <color name="end_color1">#AE88EA</color>
     <color name="start_color1">#4776E6</color>
+    <color name="neon_green">#39FF14</color>
+    <color name="grey">#48575E</color>
+    <color name="grey_dark">#C40F0F10</color>
 </resources>

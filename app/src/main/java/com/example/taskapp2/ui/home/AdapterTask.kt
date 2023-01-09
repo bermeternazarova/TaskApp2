@@ -35,7 +35,7 @@ class AdapterTask(
             holder.itemView.setBackgroundResource(R.color.black)
         }
         else
-        { holder.itemView.setBackgroundResource(R.color.white)}
+        { holder.itemView.setBackgroundResource(R.color.neon_green)}
     }
     override fun getItemCount(): Int {
         return taskList.size
